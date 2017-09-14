@@ -14,13 +14,32 @@
 
 @implementation Home
 
+int counter = 0;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 - (IBAction)changeButtonPRess:(id)sender {
-    self.labelTest.text = @"Ahora no soy Test!";
+    
+    NSArray *myTextArray = @[ @"Ahora no soy Test!", @"O tal vez si...", @"Nope, la verdad no lo soy", @"Esta bien ganas", @"No soy un Test"];
+    NSArray *myColorArray = @[ [UIColor redColor], [UIColor blueColor], [UIColor yellowColor], [UIColor greenColor], [UIColor purpleColor] ];
+    
+    NSString *currentelementText = [myTextArray objectAtIndex:counter];
+    NSString *currentelementColor = [myColorArray objectAtIndex:counter];
+
+    self.labelTest.text = currentelementText;
+    self.labelTest.textColor = currentelementColor;
+    
     self.labelTest.adjustsFontSizeToFitWidth = true;
+    
+    if (counter >= 4) {
+        counter = 0;
+    }
+    else
+        counter = counter + 1;
+    
 }
 
 
