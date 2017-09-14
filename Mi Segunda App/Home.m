@@ -18,6 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
+- (IBAction)changeButtonPRess:(id)sender {
+    self.labelTest.text = @"Ahora no soy Test!";
+    self.labelTest.adjustsFontSizeToFitWidth = true;
+}
 
 
 - (void)didReceiveMemoryWarning {
